@@ -1,1 +1,20 @@
-/home/user1/.Xresources
+UXTerm.VT100.translations:      #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \nMeta <Key> minus: smaller-vt-font() \nMeta <Key> plus: larger-vt-font() \nMeta <Key> KP_Subtract: smaller-vt-font() \nMeta <Key> KP_Add: larger-vt-font() \n
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #373b41
+*.color0:       #0c0d0e
+*.color8:       #737475
+*.color1:       #e31a1c
+*.color9:       #e31a1c
+*.color2:       #31a354
+*.color10:      #379353
+*.color3:       #e07d12
+*.color11:      #dca060
+*.color4:       #3182bd
+*.color12:      #3182bd
+*.color5:       #756bb1
+*.color13:      #756bb1
+*.color6:       #80b1d3
+*.color14:      #ba3333
+*.color7:       #93a7ba
+*.color15:      #014283
