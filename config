@@ -31,7 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec --no-startup-id uxterm -fa 'DejaVu Sans Mono:style=Regular' -fd IPAGothic:style=Regular -fs 16 -en UTF-8
+bindsym $mod+Return exec --no-startup-id uxterm -fa 'DejaVu Sans Mono:style=Regular' -fd 'IPAGothic:style=Regular' -fs 16 -en UTF-8
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -40,7 +40,8 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'IPAPGothic-20'"
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'IPAPGothic-20'"
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -53,6 +54,10 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+
+bindsym Mod1+Tab  focus right
+bindsym Mod1+grave  focus left
+
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -176,6 +181,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id /home/user1/Scripts/bright.sh 1
 bindsym XF86AudioMute exec --no-startup-id /home/user1/Scripts/mute.sh
 bindsym $mod+t [title="^uxterm"] scratchpad show
 bindsym $mod+m [title="^LINE"] scratchpad show
+for_window [title="LINE"] floating enable
 for_window [class="^.*"] border pixel 0.001
+for_window [class="zoom"] floating enable
 bindsym $mod+x exec --no-startup-id "notify-send -t 500 $(free -h --si|grep Mem|awk '{print $7}')"
 bindsym $mod+Ctrl+w exec ~/Scripts/wscan.sh
