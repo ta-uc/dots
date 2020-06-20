@@ -168,7 +168,7 @@ bindsym Mod1+Ctrl+Right workspace next
 bindsym Mod1+Ctrl+Left workspace prev
 bindsym Mod1+Ctrl+Up workspace UP
 bindsym Mod1+Ctrl+Down workspace DOWN
-exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
+#exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
 exec --no-startup-id fcitx
 exec --no-startup-id volumeicon
 exec --no-startup-id feh --bg-fill ~/Pictures/WP/w.jpg
@@ -179,10 +179,13 @@ bindsym $mod+XF86MonBrightnessDown exec --no-startup-id xset dpms force off
 bindsym XF86MonBrightnessDown exec  --no-startup-id /home/user1/Scripts/bright.sh 0
 bindsym XF86MonBrightnessUp exec --no-startup-id /home/user1/Scripts/bright.sh 1
 bindsym XF86AudioMute exec --no-startup-id /home/user1/Scripts/mute.sh
-bindsym $mod+t [title="^uxterm"] scratchpad show
+bindsym $mod+t [class="^UXTerm"] scratchpad show
 bindsym $mod+m [title="^LINE"] scratchpad show
-for_window [title="LINE"] floating enable
+bindsym $mod+n [title="^Simplenote"] scratchpad show
 for_window [class="^.*"] border pixel 0.001
+for_window [title="^Simplenote"] floating enable
+for_window [title="LINE"] floating enable
 for_window [class="zoom"] floating enable
 bindsym $mod+x exec --no-startup-id "notify-send -t 500 $(free -h --si|grep Mem|awk '{print $7}')"
 bindsym $mod+Ctrl+w exec ~/Scripts/wscan.sh
+
