@@ -162,30 +162,32 @@ bar {
 }
 
 ##########ADDED###########
+#exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
+#exec --no-startup-id volumeicon
+exec --no-startup-id fcitx
+exec --no-startup-id feh --bg-fill ~/Pictures/WP/w.jpg
+exec --no-startup-id syndaemon -i 0.5 -t -k
+exec --no-startup-id xrdb ~/.Xresources
+for_window [class="^.*"] border pixel 0.001
+for_window [title="^Simplenote"] floating enable
+for_window [title="LINE"] floating enable
+for_window [class="zoom"] floating enable
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym Mod1+Ctrl+Right workspace next
 bindsym Mod1+Ctrl+Left workspace prev
 bindsym Mod1+Ctrl+Up workspace UP
 bindsym Mod1+Ctrl+Down workspace DOWN
-#exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
-exec --no-startup-id fcitx
-exec --no-startup-id volumeicon
-exec --no-startup-id feh --bg-fill ~/Pictures/WP/w.jpg
-exec --no-startup-id syndaemon -i 0.5 -t -k
-exec --no-startup-id xrdb ~/.Xresources
-bindsym Mod1+Ctrl+v exec --no-startup-id /home/user1/Scripts/display.sh
 bindsym $mod+XF86MonBrightnessDown exec --no-startup-id xset dpms force off
 bindsym XF86MonBrightnessDown exec  --no-startup-id /home/user1/Scripts/bright.sh 0
 bindsym XF86MonBrightnessUp exec --no-startup-id /home/user1/Scripts/bright.sh 1
-bindsym XF86AudioMute exec --no-startup-id /home/user1/Scripts/mute.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short|grep RUNNING|awk '{print $1}') -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short|grep RUNNING|awk '{print $1}') +5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list sinks short|grep RUNNING|awk '{print $1}') toggle
 bindsym $mod+t [class="^UXTerm"] scratchpad show
 bindsym $mod+m [title="^LINE"] scratchpad show
 bindsym $mod+n [title="^Simplenote"] scratchpad show
-for_window [class="^.*"] border pixel 0.001
-for_window [title="^Simplenote"] floating enable
-for_window [title="LINE"] floating enable
-for_window [class="zoom"] floating enable
 bindsym $mod+x exec --no-startup-id "notify-send -t 500 $(free -h --si|grep Mem|awk '{print $7}')"
+bindsym Mod1+Ctrl+v exec --no-startup-id /home/user1/Scripts/display.sh
 bindsym $mod+Ctrl+w exec ~/Scripts/wscan.sh
 
