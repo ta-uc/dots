@@ -47,7 +47,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -78,15 +78,15 @@ fi
 [ -r /home/user1/.byobu/prompt ] && . /home/user1/.byobu/prompt   #byobu-prompt#
 
 . ~/Scripts/functions.sh
+
 export SUDO_ASKPASS="$HOME/Scripts/askpass.sh"
 export GOOGLE_APPLICATION_CREDENTIALS=~/.cre/pasture-gcp.json
 export W3MIMGDISPLAY_PATH=/usr/lib/w3m/w3mimgdisplay
-export PYTHONDONTWRITEBYTECODE=1
+
 alias woff='sudo -A killall wpa_supplicant;sudo -A ifconfig wlp1s0 down'
 alias won='sudo -A ifconfig wlp1s0 down&&sudo -A ifconfig wlp1s0 up&&sudo -A wpa_supplicant -Dn180211,wext -c/etc/wpa_supplicant/ws.conf -B -iwlp1s0'
 alias ns3='python3 ~/Programs/ns-3-allinone/ns-3-dev/waf --run'
 alias py3='python3'
 alias fbterm='export TERM=fbterm && fbterm'
 alias cdd='cd ~/Downloads'
-alias ma='curl cheat.sh/'
 alias rm='trash'
