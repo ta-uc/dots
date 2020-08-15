@@ -172,6 +172,9 @@ for_window [class="^.*"] border pixel 0.001
 for_window [title="^Simplenote"] floating enable
 for_window [title="LINE"] floating enable
 for_window [class="zoom"] floating enable
+bindsym $mod+t [class="^UXTerm"] scratchpad show
+bindsym $mod+m [title="^LINE"] scratchpad show
+bindsym $mod+n [title="^Simplenote"] scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym Mod1+Ctrl+Right workspace next
@@ -184,9 +187,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id /home/user1/Scripts/bright.sh 1
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short|grep RUNNING|awk '{print $1}') -5% & notify-send -t 500 $(pacmd dump-volumes|grep "Sink $(pactl list sinks short|grep RUNNING|awk '{print $1}')"|awk '{print $8}')
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short|grep RUNNING|awk '{print $1}') +5% & notify-send -t 500 $(pacmd dump-volumes|grep "Sink $(pactl list sinks short|grep RUNNING|awk '{print $1}')"|awk '{print     $8}')
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list sinks short|grep RUNNING|awk '{print $1}') toggle
-bindsym $mod+t [class="^UXTerm"] scratchpad show
-bindsym $mod+m [title="^LINE"] scratchpad show
-bindsym $mod+n [title="^Simplenote"] scratchpad show
 bindsym $mod+x exec --no-startup-id "notify-send -t 500 $(free -h --si|grep Mem|awk '{print $7}')"
 bindsym Mod1+Ctrl+v exec --no-startup-id /home/user1/Scripts/display.sh
 bindsym $mod+Ctrl+w exec ~/Scripts/wscan.sh
