@@ -4,7 +4,6 @@ filetype off                  " required
 set hidden
 set cursorline
 set autoread
-set cursorcolumn
 set virtualedit=onemore
 set expandtab
 set tabstop=2
@@ -43,3 +42,8 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+
