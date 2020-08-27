@@ -82,7 +82,7 @@ fi
 export SUDO_ASKPASS="$HOME/Scripts/askpass.sh"
 export GOOGLE_APPLICATION_CREDENTIALS=~/.cre/pasture-gcp.json
 export W3MIMGDISPLAY_PATH=/usr/lib/w3m/w3mimgdisplay
-
+export PATH=~/.local/bin:$PATH
 alias woff='sudo -A killall wpa_supplicant;sudo -A ifconfig wlp1s0 down'
 alias won='sudo -A ifconfig wlp1s0 down&&sudo -A ifconfig wlp1s0 up&&sudo -A wpa_supplicant -Dn180211,wext -c/etc/wpa_supplicant/ws.conf -B -iwlp1s0'
 alias ns3='python3 ~/Programs/ns-3-allinone/ns-3-dev/waf --run'
