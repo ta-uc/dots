@@ -41,7 +41,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'IPAPGothic-20'"
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "IPAPGothic 22"
 
 # change focus
 bindsym $mod+h focus left
@@ -160,10 +160,12 @@ bar {
         output         eDP1
         status_command i3status
 }
-
+bar {
+        output         eDP-1
+        status_command i3status
+}
 ##########ADDED###########
 #exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
-#exec --no-startup-id volumeicon
 exec --no-startup-id fcitx
 exec --no-startup-id feh --bg-fill ~/Pictures/WP/w.jpg
 exec --no-startup-id syndaemon -i 0.5 -t -k
@@ -185,8 +187,8 @@ bindsym Mod1+Ctrl+Down workspace DOWN
 bindsym $mod+XF86MonBrightnessDown exec --no-startup-id xset dpms force off
 bindsym XF86MonBrightnessDown exec  --no-startup-id /home/user1/Scripts/bright.sh 0
 bindsym XF86MonBrightnessUp exec --no-startup-id /home/user1/Scripts/bright.sh 1
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short|grep RUNNING|awk '{print $1}') -5% & notify-send -t 500 $(pacmd dump-volumes|grep "Sink $(pactl list sinks short|grep RUNNING|awk '{print $1}')"|awk '{print $8}')
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short|grep RUNNING|awk '{print $1}') +5% & notify-send -t 500 $(pacmd dump-volumes|grep "Sink $(pactl list sinks short|grep RUNNING|awk '{print $1}')"|awk '{print     $8}')
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short|grep RUNNING|awk '{print $1}') -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks short|grep RUNNING|awk '{print $1}') +5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list sinks short|grep RUNNING|awk '{print $1}') toggle
 bindsym $mod+x exec --no-startup-id "notify-send -t 500 $(free -h --si|grep Mem|awk '{print $7}')"
 bindsym Mod1+Ctrl+v exec --no-startup-id /home/user1/Scripts/display.sh
