@@ -84,7 +84,7 @@ export GOOGLE_APPLICATION_CREDENTIALS=~/.cre/pasture-gcp.json
 export W3MIMGDISPLAY_PATH=/usr/lib/w3m/w3mimgdisplay
 export PATH=~/.local/bin:$PATH
 alias woff='sudo -A killall wpa_supplicant;sudo -A ifconfig wlp1s0 down'
-alias won='sudo -A ifconfig wlp1s0 down&&sudo -A ifconfig wlp1s0 up&&sudo -A wpa_supplicant -Dn180211,wext -c/etc/wpa_supplicant/ws.conf -B -iwlp1s0'
+alias won='sudo -A ifconfig wlp1s0 down&&sudo -A ifconfig wlp1s0 up&&sudo -A wpa_supplicant -D nl80211 -c /etc/wpa_supplicant/wpa_supplicant-wlp1s0.conf -B -i wlp1s0'
 alias py3='python3'
 alias fbterm='export TERM=fbterm && fbterm'
 alias cdd='cd ~/Downloads'
