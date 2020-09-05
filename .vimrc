@@ -20,10 +20,11 @@ set whichwrap=b,s,h,l,<,>,[,],~
 set wildmenu
 set list listchars=tab:\▸\-
 
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
 autocmd FileType python map <buffer> <C-M-n> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <C-M-n> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType c map <buffer> <C-M-n> :w<CR>:exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd FileType c map <buffer> <C-M-n> :w<CR>:exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
@@ -38,11 +39,15 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'diepm/vim-rest-console'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'preservim/nerdcommenter'
+Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 map <C-n> :NERDTreeToggle<CR>
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
