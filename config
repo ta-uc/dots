@@ -175,6 +175,7 @@ for_window [class="^.*"] border pixel 0.001
 for_window [title="^Simplenote"] floating enable
 for_window [title="LINE"] floating enable
 for_window [class="zoom"] floating enable
+bindsym $mod+Tab exec rofi -show window -font "IPAPGothic 22"
 bindsym $mod+t [class="^UXTerm"] scratchpad show
 bindsym $mod+m [title="^LINE"] scratchpad show
 bindsym $mod+n [title="^Simplenote"] scratchpad show
