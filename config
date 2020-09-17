@@ -167,7 +167,7 @@ bar {
 ##########ADDED###########
 #exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
 exec --no-startup-id fcitx
-exec --no-startup-id feh --bg-fill ~/Pictures/WP/w.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/WP/plane.png
 exec --no-startup-id syndaemon -i 0.5 -t -k
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
