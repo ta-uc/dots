@@ -41,10 +41,17 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'diepm/vim-rest-console'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'preservim/nerdcommenter'
+Plugin 'Yggdroot/indentLine'
 Plugin 'morhetz/gruvbox'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+let g:indentLine_char = '┆'
+
+set background=dark
+let g:gruvbox_contrast_dark = 'medium'
+autocmd vimenter * colorscheme gruvbox
 
 map <C-n> :NERDTreeToggle<CR>
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
