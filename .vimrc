@@ -25,9 +25,6 @@ autocmd FileType python map <buffer> <C-M-n> :w<CR>:exec '!python3' shellescape(
 autocmd FileType python imap <buffer> <C-M-n> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType c map <buffer> <C-M-n> :w<CR>:exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd FileType c imap <buffer> <C-M-n> :w<CR>:exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
-autocmd FileType javascript map <buffer> <C-M-n> :w<CR>:exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
-autocmd FileType javascript imap <buffer> <C-M-n> :w<CR>:exec '!node shellescape(@%, 1))'<CR>
-
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -47,9 +44,12 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'preservim/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
 Plugin 'morhetz/gruvbox'
+Plugin 'myhere/vim-nodejs-complete'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+set omnifunc=javascriptcomplete#CompleteJS
 
 let g:indentLine_char = '┆'
 
