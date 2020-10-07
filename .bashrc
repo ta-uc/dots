@@ -31,8 +31,15 @@ shopt -s checkwinsize
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
+gitst()
+{
+    printf "%*s" $COLUMNS "$(__git_ps1)"
+}
 
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\W \[\033[01;32m\]> \[\033[00m\]'
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWDIRTYSTATE=1
+PS1='\[$(tput sc; gitst; tput rc)\]${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\W\[\033[01;32m\] > \[\033[00m\]'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
