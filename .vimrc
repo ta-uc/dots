@@ -45,6 +45,7 @@ Plugin 'preservim/nerdcommenter'
 Plugin 'Yggdroot/indentLine'
 Plugin 'morhetz/gruvbox'
 Plugin 'myhere/vim-nodejs-complete'
+Plugin 'vim-airline/vim-airline'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,6 +53,9 @@ filetype plugin indent on    " required
 set omnifunc=javascriptcomplete#CompleteJS
 
 let g:indentLine_char = '┆'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 set background=dark
 let g:gruvbox_contrast_dark = 'medium'
