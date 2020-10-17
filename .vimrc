@@ -23,6 +23,7 @@ set nowrap
 set mouse=a
 set omnifunc=javascriptcomplete#CompleteJS
 set background=dark
+set laststatus=2
 set t_Co=256
 set t_ut=
 set fileformat=unix
@@ -43,6 +44,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'morhetz/gruvbox'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-python/python-syntax'
 Plugin 'jiangmiao/auto-pairs'
 " All of your Plugins must be added before the following line
@@ -51,15 +53,17 @@ filetype plugin indent on    " required
 
 let g:python_highlight_all = 1
 let g:indentLine_char = '┆'
+let g:airline_theme = 'ayu_dark'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:gruvbox_contrast_dark = 'medium'
 
-autocmd vimenter * colorscheme gruvbox
 autocmd FileType python map <buffer> <C-M-n> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <C-M-n> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType c map <buffer> <C-M-n> :w<CR>:exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd FileType c imap <buffer> <C-M-n> :w<CR>:exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd vimenter * colorscheme gruvbox
+autocmd vimenter * :AirlineRefresh
 
 map <C-n> :NERDTreeToggle<CR>
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
