@@ -23,7 +23,11 @@ set nowrap
 set mouse=a
 set omnifunc=javascriptcomplete#CompleteJS
 set background=dark
-
+set t_Co=256
+set t_ut=
+set fileformat=unix
+set encoding=utf-8
+set fileencoding=utf-8
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -48,7 +52,7 @@ filetype plugin indent on    " required
 let g:python_highlight_all = 1
 let g:indentLine_char = '┆'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+" let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:gruvbox_contrast_dark = 'medium'
 
 autocmd vimenter * colorscheme gruvbox
@@ -64,3 +68,9 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
+" indent/unindent with tab/shift-tab
+nmap <Tab> >>
+nmap <S-tab> <<
+imap <S-Tab> <Esc><<i
+vmap <Tab> >gv
+vmap <S-Tab> <gv
