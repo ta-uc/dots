@@ -29,6 +29,7 @@ set t_ut=
 set fileformat=unix
 set encoding=utf-8
 set fileencoding=utf-8
+set updatetime=100
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -47,6 +48,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-python/python-syntax'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'yuezk/vim-js'
+Plugin 'airblade/vim-gitgutter'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
