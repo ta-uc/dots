@@ -1,4 +1,9 @@
 UXTerm.VT100.translations:      #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \nMeta <Key> minus: smaller-vt-font() \nMeta <Key> plus: larger-vt-font() \nMeta <Key> KP_Subtract: smaller-vt-font() \nMeta <Key> KP_Add: larger-vt-font() \n
+UXTerm*VT100.Translations: #override \
+    Shift <KeyPress> Insert: insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>C:    copy-selection(CLIPBOARD) \n\
+    Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
 UXTerm*borderWidth: 0
 *.foreground:   #c5c8c6
 *.background:   #002b36
