@@ -31,7 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec --no-startup-id uxterm -fa 'DejaVu Sans Mono' -fw 'Symbola' -fs 16 -en UTF-8 -cjk_width
+bindsym $mod+Return exec --no-startup-id uxterm -fa 'DejaVu Sans Mono' -fw 'Symbola' -fs 16 -en UTF-8
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -166,6 +166,7 @@ bar {
 }
 ##########ADDED###########
 #exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
+exec --no-startup-id xset r rate 280 50
 exec --no-startup-id fcitx
 exec --no-startup-id ~/scr/wp.sh
 exec --no-startup-id syndaemon -i 0.5 -t -k
