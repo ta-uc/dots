@@ -50,6 +50,8 @@ Plugin 'vim-python/python-syntax'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'yuezk/vim-js'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'voldikss/vim-floaterm'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,8 +60,11 @@ let g:python_highlight_all = 1
 let g:indentLine_char = '┆'
 let g:airline_theme = 'ayu_dark'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:gruvbox_contrast_dark = 'medium'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+let g:floaterm_keymap_toggle = '<C-M-T>'
 
 autocmd FileType python map <buffer> <C-M-n> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <C-M-n> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
