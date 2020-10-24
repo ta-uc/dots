@@ -154,16 +154,49 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# class                 border  bground text    indicator child_border
+client.focused          #364D4E #657686 #FFFFFF #2E9EF4   #285577
+client.focused_inactive #333333 #879296 #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #90478D #FFFFFF #903C90   #882390
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
+
 bar {
-        output         eDP1
-        status_command i3status
+      output         eDP-1
+      status_command i3status
+
+      colors {
+        background #383C4A
+        statusline #D3D7CF
+        separator  #484848
+
+        focused_workspace  #008391 #008391 #FFFFFF
+        active_workspace   #436B56 #335141 #FFFFFF
+        inactive_workspace #333333 #C5C5C5 #292929
+        urgent_workspace   #2F343A #FF5858 #FFFFFF
+        binding_mode       #2F343A #FF5858 #FFFFFF
+  }
 }
+
 bar {
-        output         eDP-1
-        status_command i3status
+      output         eDP1
+      status_command i3status
+
+      colors {
+        background #383C4A
+        statusline #D3D7CF
+        separator  #484848
+
+        focused_workspace  #008391 #008391 #FFFFFF
+        active_workspace   #436B56 #335141 #FFFFFF
+        inactive_workspace #333333 #C5C5C5 #292929
+        urgent_workspace   #2F343A #FF5858 #FFFFFF
+        binding_mode       #2F343A #FF5858 #FFFFFF
+  }
 }
+
 ##########ADDED###########
 #exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
 exec --no-startup-id xset r rate 280 50
