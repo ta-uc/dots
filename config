@@ -199,6 +199,7 @@ bar {
 
 ##########ADDED###########
 #exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
+exec --no-startup-id setxkbmap -option ctrl:swapcaps
 exec --no-startup-id xset r rate 280 50
 exec --no-startup-id fcitx
 exec --no-startup-id ~/scr/wp.sh
