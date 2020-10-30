@@ -41,7 +41,7 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'IPAPGothic-20'"
-bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -font "IPAPGothic 22"
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -icon-theme "Papirus" -show-icons -font "Ubuntu 25" -display-drun "🔎"
 
 # change focus
 bindsym $mod+h focus left
@@ -164,6 +164,7 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 client.background       #FFFFFF
 
 bar {
+      position       top
       output         eDP-1
       status_command i3status
 
@@ -181,6 +182,7 @@ bar {
 }
 
 bar {
+      position top
       output         eDP1
       status_command i3status
 
@@ -199,7 +201,7 @@ bar {
 
 ##########ADDED###########
 #exec --no-startup-id xrandr --listmonitors | awk '{print $4}'| xargs -I {} xrandr --output {} --mode 1600x900
-exec --no-startup-id setxkbmap -option ctrl:swapcaps
+exec --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id xset r rate 280 50
 exec --no-startup-id fcitx
 exec --no-startup-id ~/scr/wp.sh
@@ -210,7 +212,7 @@ for_window [class="^.*"] border pixel 0.001
 for_window [title="^Simplenote"] floating enable
 for_window [title="^LINE"] floating enable
 for_window [class="zoom"] floating enable
-bindsym $mod+Tab exec rofi -show window -font "IPAPGothic 22"
+bindsym $mod+Tab exec rofi -show window -icon-theme "Papirus" -show-icons -font "Ubuntu 25" -display-window "❏"
 bindsym $mod+t [class="^UXTerm"] scratchpad show
 bindsym $mod+m [title="^LINE"] scratchpad show
 bindsym $mod+n [title="^Simplenote"] scratchpad show
