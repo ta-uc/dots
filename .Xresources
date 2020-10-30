@@ -6,7 +6,8 @@ UXTerm*VT100.Translations: #override \
     Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
 UXTerm*borderWidth: 0
 *.foreground:   #c5c8c6
-*.background:   #002b36
+!*.background:   #002b36
+*.background:   #313742
 *.cursorColor:  #f5f5f5
 *.color0:       #0c0d0e
 *.color8:       #737475
