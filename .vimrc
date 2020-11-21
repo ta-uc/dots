@@ -30,6 +30,10 @@ set fileformat=unix
 set encoding=utf-8
 set fileencoding=utf-8
 set updatetime=100
+set foldenable 
+set foldmethod=indent
+set nofoldenable
+set foldlevel=1
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -75,6 +79,8 @@ autocmd FileType c imap <buffer> <C-M-n> :w<CR>:exec '!gcc '.shellescape('%').' 
 autocmd vimenter * colorscheme gruvbox
 autocmd vimenter * :AirlineRefresh
 
+map <A-f> :FZF<CR>
+nmap <A-f> :FZF<CR>
 map <C-n> :NERDTreeToggle<CR>
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-Left> :tabprevious<CR>

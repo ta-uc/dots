@@ -85,8 +85,8 @@ fi
 [ -r /home/user1/.byobu/prompt ] && . /home/user1/.byobu/prompt   #byobu-prompt#
 
 shopt -s autocd  
-. ~/Scripts/functions.sh
-export SUDO_ASKPASS="$HOME/Scripts/askpass.sh"
+. ~/scr/functions.sh
+export SUDO_ASKPASS="$HOME/scr/askpass.sh"
 export GOOGLE_APPLICATION_CREDENTIALS=~/.cre/pasture-gcp.json
 export W3MIMGDISPLAY_PATH=/usr/lib/w3m/w3mimgdisplay
 export PATH=~/.local/bin:$PATH
