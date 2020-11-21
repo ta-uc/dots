@@ -166,7 +166,7 @@ client.background       #FFFFFF
 bar {
       position       top
       output         eDP-1
-      status_command i3status
+      status_command i3status -c ~/dots/status
 
       colors {
         background #383C4A
@@ -184,7 +184,7 @@ bar {
 bar {
       position top
       output         eDP1
-      status_command i3status
+      status_command i3status -c ~/dots/status
 
       colors {
         background #383C4A
