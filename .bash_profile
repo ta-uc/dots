@@ -10,3 +10,4 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export WP=~/pic/WP/plane.png
+export MOZ_USE_XINPUT2=1
